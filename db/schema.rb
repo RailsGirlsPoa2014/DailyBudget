@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141129161712) do
+ActiveRecord::Schema.define(version: 20141129163547) do
 
   create_table "app_settings", force: true do |t|
     t.decimal  "daily_budget"
@@ -30,5 +30,16 @@ ActiveRecord::Schema.define(version: 20141129161712) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "outflows", force: true do |t|
+    t.integer  "category_id"
+    t.string   "description"
+    t.decimal  "amount"
+    t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "outflows", ["category_id"], name: "index_outflows_on_category_id"
 
 end

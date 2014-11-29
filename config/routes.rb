@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root 'outflows#index'
+  
+  resources :outflows
+
   resources :app_settings
 
   resources :categories

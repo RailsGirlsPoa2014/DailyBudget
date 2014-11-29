@@ -1,0 +1,33 @@
+<%= form_for(@outflow) do |f| %>
+  <% if @outflow.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@outflow.errors.count, "error") %> prohibited this outflow from being saved:</h2>
+
+      <ul>
+      <% @outflow.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">    
+    <%= f.label :category_id %><br>
+    <%= f.collection_select :category_id, @categories, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.datetime_select :date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

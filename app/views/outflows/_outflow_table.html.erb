@@ -1,0 +1,9 @@
+<tr>
+  <td><%= outflow.date.strftime("%d") %></td>
+  <td><%= outflow.category.name %></td>
+  <td><%= outflow.description %></td>
+  <td><%= outflow.amount %></td>  
+  <td><%= link_to 'Show', outflow %></td>
+  <td><%= link_to 'Edit', edit_outflow_path(outflow) %></td>
+  <td><%= link_to 'Destroy', outflow, method: :delete, data: { confirm: 'Você tem certeza que deseja apagar?' } %></td>
+</tr>
